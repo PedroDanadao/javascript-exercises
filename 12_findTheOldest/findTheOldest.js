@@ -18,5 +18,13 @@ function getYearsLived (person) {
     return lastLivedYear - person.yearOfBirth;
 }
 
+const findTheOldestReduce = function(people) {
+    const oldestPerson = people.reduce((oldest, current) => {
+        return getYearsLived(oldest) > getYearsLived(current) ? oldest : current;
+    })
+
+    return oldestPerson;
+}
+
 // Do not edit below this line
-module.exports = findTheOldest;
+module.exports = findTheOldestReduce;
